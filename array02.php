@@ -170,13 +170,64 @@
 		echo "<br><br>";
 	?>
 	<?php 
-		$football = ['brazil', 'argentina', 'germany'];
-		$cricket = ['bangladesh', 'india', 'pakistan'];
+		// array_replace()
+		// array_replace_recursive
+		// array_pop & array_push
+		// array_shift & array_unshift
+		// array_merge
 
-		$playingCountry = array_replace($football, $cricket);
+		$fruits = ['a' => 'apple','b' => 'mango','c' => 'banana','d' => 'orange'];
+		$veggi = ['a' => 'john','f' => 'doe','g' => 'smith'];
+		//$newArray = array_merge($fruits, $veggi);
+		$newArray = array_merge_recursive($fruits, $veggi);
 		echo "<pre>";
-		print_r($playingCountry);
+		print_r($newArray);
 		echo "</pre>";
+		echo $newArray['a'][1];
+		// $fruits = ['apple', 'mango', 'banana', 'orange'];
+		// array_unshift($fruits, 'graps','lamon','cucumber','pinaapples');
+		// print_r($fruits);
+
+		$array1 = [
+			'a' => ['yellow, red'],
+			'b' => ['black', 'orange'],
+			'pink'
+		];
+
+		$array2 = [
+			'a' => ['john', 'doe'],
+			'b' => ['js', 'php']
+		];
+
+		$array3 = array_replace_recursive($array1, $array2);
+
+		echo "<pre>";
+		print_r($array1);
+		echo "</pre>";
+
+		echo "<pre>";
+		print_r($array2);
+		echo "</pre>";
+
+		echo "<pre>";
+		print_r($array3);
+		echo "</pre>";
+
+		// $fruits = ['a' => 'apple', 'mango', 'banana', 'orange'];
+		// $vaggie = [1 => 'carrot', 'a' => 'pepe', 'c' => 'potato'];
+		// $newArray = array_replace($fruits, $vaggie);
+
+		// echo "<pre>";
+		// print_r($fruits);
+		// echo "</pre>";
+
+		// echo "<pre>";
+		// print_r($vaggie);
+		// echo "</pre>";
+
+		// echo "<pre>";
+		// print_r($newArray);
+		// echo "</pre>";
 	?>
 </body>
 </html>
