@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
+	<title>Array Function</title>
 </head>
 <style>
 	table, tr , td, th {
@@ -51,6 +51,85 @@
 // array_walk
 // array_walk_recursive
 // array_map
+// array_reduce
+// sort
+// rsort
+// asort => use for associative array
+// arsort => use for associative array
+// ksort => use for key sorting in assending order
+// krsort => use for key sorting in desending order
+// natsort
+// natcasesort
+// array_multisort
+// array_reverse
+
+
+$food = ['orange','apple','carrot', 'bulbo'];
+$veggi = ['carrot', 'bulbo'];
+
+$aryReverce = array_reverse($food);
+
+echo "<pre>";
+print_r($aryReverce);
+//print_r($veggi);
+echo "</pre>";
+
+$img = ['Img12.png', 'img10.png','Img8.png','img04.png', 'img01.png'];
+
+natcasesort($img);
+
+echo "<pre>";
+print_r($img);
+echo "</pre>";
+
+$food = [
+	'd' => 'rice',
+	'e' => 'brade',
+	'c' => 'apple',
+	'a' => 'mango',
+	'b' => 'banana'
+];
+
+krsort($food);
+
+echo "<pre>";
+//print_r($food);
+echo "</pre>";
+
+
+
+$indexFsort = [1,23,4,5,45,5,4,5,];
+$fruitFsort = ['apple','mango','orange','pinaapple','licue','watermalone'];
+sort($indexFsort);
+echo "<pre>";
+//print_r($indexFsort);
+echo "</pre>";
+
+function arryReduceFun($carry, $num) {
+	$carry*=$num;
+	return  $carry;
+}
+
+$num02 = [10,20,30,40,50];
+
+$sumByReduce = array_reduce($num02, 'arryReduceFun', 1);
+
+echo "<pre>";
+print_r($sumByReduce);
+echo "</pre>";
+
+
+function reduceFun($carry,$txt) {
+	return $carry. ' - ' .$txt.'<br>';
+}
+
+$FavFruits = ['apple', 'mango', 'orange'];
+
+$ary_redice = array_reduce($FavFruits, 'reduceFun', 20);
+
+echo "<pre>";
+print_r($ary_redice);
+echo "</pre>";
 
 function anoFun($txt) {
 	return strtoupper($txt);
